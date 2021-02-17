@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import logImage from '../../assets/images/RootsFav.jpg';
 import './styles.sass';
 
 class Header extends Component {
@@ -29,21 +29,25 @@ class Header extends Component {
         <Link onlyActiveOnIndex={true} key={1} to="/" activeClassName="activeNavLink" className="navLink">
           Home
         </Link>
-        <Link onlyActiveOnIndex={true} key={2} to="/profile" activeClassName="activeNavLink" className="navLink">
+        <Link onlyActiveOnIndex={true} key={2} to="/about" activeClassName="activeNavLink" className="navLink">
+          About Us
+        </Link>
+        <Link onlyActiveOnIndex={true} key={3} to="/profile" activeClassName="activeNavLink" className="navLink">
           Profile
         </Link>
-        <Link onlyActiveOnIndex={true} key={3} to="/trades" activeClassName="activeNavLink" className="navLink">
+        <Link onlyActiveOnIndex={true} key={4} to="/trades" activeClassName="activeNavLink" className="navLink">
           Trades
         </Link>
-        <Link onlyActiveOnIndex={true} key={4} to="/login" activeClassName="activeNavLink" className="navLink">
+        <Link onlyActiveOnIndex={true} key={5} to="/login" activeClassName="activeNavLink" className="navLink">
           Login
         </Link>
+        
       </div>
     );
 
     this.loggedOutMenu = (
       <div className="menu loginMenu">
-        <Link onlyActiveOnIndex={true} key={5} activeClassName="activeNavLink" className="navLink">
+        <Link onlyActiveOnIndex={true} key={6} activeClassName="activeNavLink" className="navLink">
           LogIn / Sign Up
         </Link>
       </div>
@@ -89,9 +93,12 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
+        <div className="LogoHeader">
+          <img src={logImage} className="LogoPic"/>
+        </div>
         <h1>
           <Link onlyActiveOnIndex={true} to="/" className="logo">
-            Trader
+          |Roots in a box|
           </Link>
         </h1>
         {this.state.menuActive ? this.menuButton: ""}
